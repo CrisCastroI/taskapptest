@@ -21,10 +21,7 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
-          
-      - name: Restore
-        run: dotnet restore Class11.sln
-        
+
       - name: Build
         run: dotnet build Class11.sln --configuration Release --no-restore
         
