@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using static Class12.BusinessLogic.ApplicationServiceRegistration;
 using static Class12.Persistence.PersistenceServiceRegistration;
 using System.Text.Json.Serialization;
+using Class13.Configuration;
 namespace Class11
 {
     public class Program
@@ -36,6 +37,7 @@ namespace Class11
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(setupAction =>
             {
+                setupAction.DocumentFilter<TitleFilter>();
                 setupAction.AddSecurityDefinition("projectAuthTest", new OpenApiSecurityScheme()
                 {
                     Type = SecuritySchemeType.Http,
